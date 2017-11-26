@@ -24,7 +24,7 @@ pygame.display.update()
 
 font_big = pygame.font.Font(None, 50)
 
-touch_buttons = {'17 on':(80,60), '4 on':(240,60), '17 off':(80,180), '4 off':(240,180)}
+touch_buttons = {'17 on':(80,60), '4 ON':(240,60), '17 OFF':(80,180), '4 off':(240,180)}
 
 for k,v in touch_buttons.items():
     text_surface = font_big.render('%s'%k, True, WHITE)
@@ -48,15 +48,19 @@ while True:
                 if x < 160:
                     GPIO.output(17, False)
                     lcd.fill((0,0,0))
+                    pygame.display.update()
                 else:
                     GPIO.output(4, False)
                     lcd.fill((0,0,0))
+                    pygame.display.update()
         
             else:
                 if x < 160:
                     GPIO.output(17, True)
                     lcd.fill((0,0,255))
+                    pygame.display.update()
                 else:
                     GPIO.output(4, True)
                     lcd.fill((255,255,0))
+                    pygame.display.update()
 sleep(0.1)
