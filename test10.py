@@ -19,7 +19,7 @@ os.putenv('SDL_MOUSEDEV', '/dev/input/touchscreen')
 pygame.init()
 pygame.mouse.set_visible(False)
 lcd = pygame.display.set_mode((320, 240))
-lcd.fill((0,50,0))
+lcd.fill((10,50,0))
 pygame.display.update()
 
 font_big = pygame.font.Font(None, 50)
