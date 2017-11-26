@@ -19,7 +19,7 @@ os.putenv('SDL_MOUSEDEV', '/dev/input/touchscreen')
 pygame.init()
 pygame.mouse.set_visible(False)
 lcd = pygame.display.set_mode((320, 240))
-lcd.fill((0,0,0))
+lcd.fill((0,100,100))
 pygame.display.update()
 
 font_big = pygame.font.Font(None, 50)
@@ -47,17 +47,17 @@ while True:
             if y < 120:
                 if x < 160:
                     GPIO.output(17, False)
-                    lcd.fill((0,0,0))
+                    lcd.fill((100,0,0))
                     pygame.display.update()
                 else:
                     GPIO.output(4, False)
-                    lcd.fill((0,0,0))
+                    lcd.fill((100,0,0))
                     pygame.display.update()
         
             else:
                 if x < 160:
                     GPIO.output(17, True)
-                    lcd.fill((0,0,255))
+                    lcd.fill((100,0,255))
                     pygame.display.update()
                 else:
                     GPIO.output(4, True)
