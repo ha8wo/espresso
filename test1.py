@@ -34,6 +34,7 @@ for k,v in touch_buttons.items():
 pygame.display.update()
 
 while True:
-    event in pygame.event.get()
+    if event in pygame.event.get():
+        true
     
     sleep(0.1)
