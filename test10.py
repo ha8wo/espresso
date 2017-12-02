@@ -47,20 +47,16 @@ while True:
             if y < 120:
                 if x < 160:
                     GPIO.output(17, False)
-                    lcd.fill((0,0,0))
-                    pygame.display.update()
+                   
                 else:
                     GPIO.output(4, False)
-                    lcd.fill((0,0,0))
-                    pygame.display.update()
+                    
         
             else:
                 if x < 160:
                     GPIO.output(17, True)
-                    lcd.fill((0,0,255))
-                    pygame.display.update()
+                   
                 else:
                     GPIO.output(4, True)
-                    lcd.fill((255,255,0))
-                    pygame.display.update()
+                   
 sleep(0.1)
