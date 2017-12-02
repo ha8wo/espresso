@@ -34,7 +34,19 @@ for k,v in touch_buttons.items():
 pygame.display.update()
 
 while True:
-    if pygame.event.get():
-        True
+    for event in pygame.event.get():
+        if(event.type is MOUSEBUTTONDOWN):
+            pos = pygame.mouse.get_pos()
+            print pos
+        elif(event.type is MOUSEBUTTONUP):
+            pos = pygame.mouse.get_pos()
+            print pos
+            #Find which quarter of the screen we're in
+            x,y = pos
+            text_surface = font_big.render('%d'%x, True, WHITE)
+            
+            lcd.blit(text_surface)
+    
+    sleep(0.1)             
     
     
