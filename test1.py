@@ -8,6 +8,8 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
+GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
 
 #Colours
 WHITE = (255,255,255)
@@ -33,7 +35,7 @@ for k,v in touch_buttons.items():
 
 pygame.display.update()
 
-while True:
+while GPIO.input(22):
     for event in pygame.event.get():
         if(event.type is MOUSEBUTTONDOWN):
             pos = pygame.mouse.get_pos()
@@ -42,11 +44,7 @@ while True:
             pos = pygame.mouse.get_pos()
             print pos
             #Find which quarter of the screen we're in
-            x,y = pos
-            text_surface = font_big.render('%d'%x, True, WHITE)
-            rect = text_surface.get_rect(center=v)
-            lcd.blit(text_surface, rect)
-            pygame.display.update()
+            
     
     sleep(0.1)             
     
