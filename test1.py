@@ -34,6 +34,7 @@ for k,v in touch_buttons.items():
 pygame.display.update()
 
 while True:
-    # Scan touchscreen events
+    pos = pygame.mouse.get_pos()
+    print pos
     pygame.display.update()
     sleep(0.1)
