@@ -44,8 +44,8 @@ while True:
             #Find which quarter of the screen we're in
             x,y = pos
             text_surface = font_big.render('%d'%x, True, WHITE)
-            
-            lcd.blit(text_surface)
+            rect = text_surface.get_rect(center=v)
+            lcd.blit(text_surface, rect)
     
     sleep(0.1)             
     
