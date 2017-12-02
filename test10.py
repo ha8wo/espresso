@@ -58,5 +58,7 @@ while True:
                    
                 else:
                     GPIO.output(4, True)
+            if x < 20
+                break 
                    
 sleep(0.1)
