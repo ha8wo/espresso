@@ -36,4 +36,4 @@ pygame.display.update()
 while True:
     # Scan touchscreen events
     
-sleep(0.1)
+    sleep(0.1)
