@@ -46,6 +46,7 @@ while True:
             text_surface = font_big.render('%d'%x, True, WHITE)
             rect = text_surface.get_rect(center=v)
             lcd.blit(text_surface, rect)
+            pygame.display.update()
     
     sleep(0.1)             
     
