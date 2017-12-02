@@ -35,6 +35,6 @@ pygame.display.update()
 
 while True:
     if pygame.event.get():
-        true
+        True
     
     sleep(0.1)
