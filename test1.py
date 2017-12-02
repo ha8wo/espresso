@@ -34,7 +34,10 @@ for k,v in touch_buttons.items():
 pygame.display.update()
 
 while True:
-    pos = pygame.mouse.get_pos()
-    print pos
+    for event in pygame.event.get():
+        if(event.type is MOUSEBUTTONDOWN):
+            pos = pygame.mouse.get_pos()
+            print pos
+    
     pygame.display.update()
     sleep(0.1)
