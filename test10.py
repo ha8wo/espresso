@@ -59,6 +59,7 @@ while True:
                 else:
                     GPIO.output(4, True)
             if x < 20:
+               lcd.fill((100,50,0)) 
                break
                    
 sleep(0.1)
