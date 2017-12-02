@@ -35,32 +35,5 @@ pygame.display.update()
 
 while True:
     # Scan touchscreen events
-    for event in pygame.event.get():
-        if(event.type is MOUSEBUTTONDOWN):
-            pos = pygame.mouse.get_pos()
-            print pos
-        elif(event.type is MOUSEBUTTONUP):
-            pos = pygame.mouse.get_pos()
-            print pos
-            #Find which quarter of the screen we're in
-            x,y = pos
-            if y < 120:
-                if x < 160:
-                    GPIO.output(17, False)
-                    lcd.fill((100,0,0))
-                    pygame.display.update()
-                else:
-                    GPIO.output(4, False)
-                    lcd.fill((100,0,0))
-                    pygame.display.update()
-        
-            else:
-                if x < 160:
-                    GPIO.output(17, True)
-                    lcd.fill((100,0,255))
-                    pygame.display.update()
-                else:
-                    GPIO.output(4, True)
-                    lcd.fill((255,255,0))
-                    pygame.display.update()
+    
 sleep(0.1)
