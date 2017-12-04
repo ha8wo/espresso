@@ -44,8 +44,17 @@ while GPIO.input(22):
             pos = pygame.mouse.get_pos()
             print pos
             #Find which quarter of the screen we're in
-            
-    
-    sleep(0.1)             
+            x,y = pos
+            if y < 120:
+                if x < 160:
+                    GPIO.output(17, False)
+                else:
+                    GPIO.output(4, False)
+            else:
+                if x < 160:
+                    GPIO.output(17, True)
+                else:
+                    GPIO.output(4, True)
+    sleep(0.1)    
     
     
